@@ -6,7 +6,7 @@ load_dotenv()
 
 def analyze_log_with_gemini(log_data):
     API_KEY = os.getenv("GEMINI_API_KEY")
-    prompt = f"Berikan analisis singkat dari log berikut dan rekomendasi dan singkat saja jangan terlalu panjang:\n{log_data}"
+    prompt = f"Berikan analisis singkat dari log berikut dan rekomendasi dan singkat saja jangan terlalu panjang:\n{log_data}. berikan informasi brute force berupa IP Address dan tanggal dan jam"
 
     response = requests.post(
         f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}",
